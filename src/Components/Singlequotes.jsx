@@ -1,9 +1,32 @@
-import React from 'react'
+import { ThumbsUp, ThumbsDown } from "lucide-react";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-function Siglequotes() {
+import { Button } from "@/components/ui/button";
+
+function SingleQuote({ quote }) {
   return (
-    <div>Siglequotes</div>
-  )
+    <Card>
+      <CardHeader>
+        <CardTitle className="text-lg">{quote.title}</CardTitle>
+        <CardDescription>Total Likes: {quote.likes}</CardDescription>
+      </CardHeader>
+      <CardFooter className="flex gap-2">
+        <Button variant="outline">
+          <ThumbsUp />
+        </Button>
+        <Button variant="outline">
+          <ThumbsDown />
+        </Button>
+        <Button variant="destructive">Delete</Button>
+      </CardFooter>
+    </Card>
+  );
 }
 
-export default Siglequotes
+export default SingleQuote;
